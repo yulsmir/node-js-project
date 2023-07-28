@@ -65,9 +65,12 @@ app.get('/', async (req, res) => {
 
 app.get('/dbtest', async (req, res, data) => {
   // const userId = req.params.userId;
-  const statement = 'SELECT id, email FROM users';
+  const statementUsers = 'SELECT id, email FROM users';
+  const statementProjects = 'SELECT title, image_link, project_link, user_id FROM projects';
 
-  const results = await getData(res, statement);
+  // const results = await getData(res, statementUsers);
+  const results = await getData(res, statementProjects);
+
   // res.send(200);
   res.json(results);
   console.log(results);
