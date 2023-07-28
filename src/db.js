@@ -1,11 +1,6 @@
-'use strict';
-
-import dotenv from 'dotenv/config';
-import express from 'express';
-const port = 3000;
-const app = express();
-const routes = express.Router();
-import mysqlPromise from 'mysql2/promise.js';
+// import express from 'express';
+// const port = 3000;
+// const app = express();
 
 // Create a MySQL connection pool
 const pool = mysqlPromise.createPool({
@@ -58,14 +53,14 @@ app.use(express.json());
 //   res.status(500).json('Some error');
 // });
 
-// Homepage
-app.get('/', async (req, res) => {
-  // const userId = req.params.userId;
-  const statement = 'SELECT id, email FROM users';
+// // Homepage
+// app.get('/', async (req, res) => {
+//   // const userId = req.params.userId;
+//   const statement = 'SELECT id, email FROM users';
 
-  const results = await getData(res, statement);
-  res.send(200).json({ userId: userId, lists: results });
-});
+//   const results = await getData(res, statement);
+//   res.send(200).json({ userId: userId, lists: results });
+// });
 
 // Start the server
 app.listen(port, () => {
