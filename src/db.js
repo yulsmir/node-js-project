@@ -2,7 +2,7 @@
 
 import dotenv from 'dotenv/config';
 import express from 'express';
-const port = 8080;
+const port = 3000;
 const app = express();
 import mysqlPromise from 'mysql2/promise.js';
 
