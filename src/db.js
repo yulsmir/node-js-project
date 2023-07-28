@@ -4,6 +4,7 @@ import dotenv from 'dotenv/config';
 import express from 'express';
 const port = 3000;
 const app = express();
+const routes = express.Router();
 import mysqlPromise from 'mysql2/promise.js';
 
 // Create a MySQL connection pool
@@ -53,8 +54,17 @@ async function getData(res, statement, params) {
 
 // Middleware
 app.use(express.json());
-app.use((err, req, res) => {
-  res.status(500).json('Some error');
+// app.use((err, req, res) => {
+//   res.status(500).json('Some error');
+// });
+
+// Homepage
+app.get('/', async (req, res) => {
+  // const userId = req.params.userId;
+  const statement = 'SELECT id, email FROM users';
+
+  const results = await getData(res, statement);
+  res.send(200).json({ userId: userId, lists: results });
 });
 
 // Start the server
