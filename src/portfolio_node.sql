@@ -37,15 +37,15 @@ insert into projects (title, image_link, project_link, user_id) values
    1),
    ('Responsive CSS & JS clocks - current time', 
   'https://github.com/yulsmir/my-portfolio-page/blob/master/images/projects/02-clocks.png?raw=true',
-  'https://yulsmir.github.io/javascript30/02-css-and-js-clock', 1),
+  'https://yulsmir.github.io/javascript-vanilla/02-css-and-js-clock', 1),
 
    ('Responsive flex panels image gallery',
    'https://github.com/yulsmir/my-portfolio-page/blob/master/images/projects/03-flex-panels.png?raw=true',
-   'https://yulsmir.github.io/javascript30/05-flex-panels-image-gallery',
+   'https://yulsmir.github.io/javascript-vanilla/05-flex-panels-image-gallery',
    1),
    ('Canvas painting',
    'https://github.com/yulsmir/my-portfolio-page/blob/master/images/projects/04-canvas-painting.png?raw=true',
-   'https://yulsmir.github.io/javascript30/08-html5-canvas/',
+   'https://yulsmir.github.io/javascript-vanilla/08-html5-canvas/',
    1),
    ('Responsive blog with parallax',
    'https://github.com/yulsmir/my-portfolio-page/blob/master/images/projects/05-responsive-blog.png?raw=true',
@@ -57,11 +57,11 @@ insert into projects (title, image_link, project_link, user_id) values
    1),
    ('Filter cities from JSON',
    'https://github.com/yulsmir/my-portfolio-page/blob/master/images/projects/07-filter-cities-from-json.png?raw=true',
-   'https://yulsmir.github.io/javascript30/06-filter-cities-from-json/',
+   'https://yulsmir.github.io/javascript-vanilla/06-filter-cities-from-json/',
    1),
    ('Update CSS with JS',
    'https://github.com/yulsmir/my-portfolio-page/blob/master/images/projects/08-update-css.png?raw=true',
-   'https://yulsmir.github.io/javascript30/03-update-css-variables-with-js/',
+   'https://yulsmir.github.io/javascript-vanilla/03-update-css-variables-with-js/',
    1)
 ;
 
