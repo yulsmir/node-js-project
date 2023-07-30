@@ -135,12 +135,12 @@
     <div class="container">
       <h2 class="title">Projects</h2>
       <div class="content">
-        <div class="grid">
-          <!-- Projects will be dynamically added here using JavaScript -->
+        <div class="grid" id="projectsGrid">
+          <!-- Dynamically added projects with JavaScript -->
         </div>
       </div>
     </div>
-  </section>
+  </section>  
 
   <!-- Login popup -->
 <div class="popup" id="popup-1">
@@ -153,7 +153,6 @@
     <div class="input-field"><input placeholder="Email" class="validate"></div>
     <div class="input-field"><input placeholder="Password" class="validate"></div>
     <button class="second-button">Sign in</button>
-    <p>Don't have an account? <a href="/signup.html">Sign Up</a></p>
   </div>
 </div>
 
@@ -187,14 +186,7 @@
     <span> <span class="far fa-copyright"></span> <a href="https://github.com/yulsmir">Yuliia Smirnova</a> 2023</span>
   </footer>
   <script src="./js/animation.js"></script>
-  <!-- JavaScript -->
-  <!-- <script src="./path/to/jquery.min.js"></script> -->
-  <script>
-    // Add a click event listener to the "Admin" link in the navbar
-    document.getElementById("adminBtn").addEventListener("click", function () {
-      showLoginPopup();
-    });
-  </script>
+  <script src="./index.js"></script>
 </body>
 
 </html>
