@@ -60,12 +60,12 @@ async function getData(res, statement, params) {
 }
 
 app.get('/', async (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/index.html'));
+  res.sendFile(path.join(__dirname, '/src/index.html'));
 });
 
-app.get('/dbtest', async (req, res, data) => {
+app.get('/#work', async (req, res, data) => {
   // const userId = req.params.userId;
-  const statementUsers = 'SELECT id, email FROM users';
+  // const statementUsers = 'SELECT id, email FROM users';
   const statementProjects = 'SELECT title, image_link, project_link, user_id FROM projects';
 
   // const results = await getData(res, statementUsers);
