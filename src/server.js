@@ -59,9 +59,9 @@ async function getData(res, statement, params) {
   }
 }
 
-app.get('/', async (req, res) => {
-  res.sendFile(path.join(__dirname, '/src/index.html'));
-});
+// app.get('/', async (req, res) => {
+//   res.sendFile(path.join(__dirname, '/src/index.html'));
+// });
 
 app.get('/#work', async (req, res, data) => {
   // const userId = req.params.userId;
@@ -75,6 +75,9 @@ app.get('/#work', async (req, res, data) => {
   res.json(results);
   console.log(results);
 });
+
+// Serve static files from the "src" directory
+app.use(express.static(path.resolve(new URL('./', import.meta.url).pathname, '../src')));
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
