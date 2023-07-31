@@ -31,18 +31,19 @@ async function unprepareConnection(connection) {
 
 // Handle errors
 function handleError(res, error) {
-  res.status(500).json({ error: 'Internal Server Error' });
+  res.send({ error: 'Internal Server Error' });
 }
 
 // Get data from the database
-async function getData(res, statement, params) {
+async function getData(statement, params) {
   const connection = await prepareConnection();
   try {
     const results = await executeStatement(connection, statement, params);
 
-    return JSON.stringify(results);
+    return results;
   } catch (error) {
-    handleError(res, error);
+    // Instead of using res.send, throw the error
+    throw new Error('Internal Server Error');
   } finally {
     await unprepareConnection(connection);
   }
