@@ -1,7 +1,7 @@
 import { getData } from './db.js';
 
 // Function to create project card elements
-function createProjectCard(project) {
+async function createProjectCard(project) {
   const card = document.createElement('div');
   card.classList.add('project-card');
 
@@ -24,9 +24,8 @@ function createProjectCard(project) {
 }
 
 // Function to display projects on the page
-export async function displayProjects() {
+async function displayProjects() {
   try {
-    // Retrieve projects data from the database
     const projectsData = await getData('SELECT * FROM projects', []);
 
     // Get the "projectsGrid" element
@@ -35,6 +34,10 @@ export async function displayProjects() {
     // Loop through the projects and create project card elements
     projectsData.forEach((project) => {
       const projectCard = createProjectCard(project);
+      projectsGrid.appendChild(projectCard);
+
+      // Add buttons
+      projectCard.appendChild(buttonsDiv); // Append buttons to the project card
       projectsGrid.appendChild(projectCard);
     });
   } catch (error) {
@@ -69,4 +72,35 @@ async function updateProject(projectId, title, imageLink, projectLink) {
   await pool.execute(statement, [title, imageLink, projectLink, projectId]);
 }
 
-export { getAllProjects, addProject, deleteProject, updateProject };
+// Function to create buttons for each project
+const createButtons = () => {
+  const buttonsDiv = document.createElement('div');
+  buttonsDiv.className = 'buttons';
+
+  const deleteBtn = document.createElement('input');
+  deleteBtn.type = 'button';
+  deleteBtn.className = 'btn btn-delete';
+  deleteBtn.value = 'Delete';
+
+  deleteBtn.addEventListener('click', async (e) => {
+    const selectedProject = e.target.closest('.project-card');
+    await deleteProject(selectedProject.id);
+    selectedProject.remove();
+  });
+
+  // Manage buttons visibility with admin checkbox
+  adminCheckbox.addEventListener('change', () => {
+    if (adminCheckbox.checked) {
+      deleteBtn.style.display = 'inline-block';
+    } else {
+      deleteBtn.style.display = 'none';
+    }
+  });
+
+  buttonsDiv.appendChild(deleteBtn);
+
+  return buttonsDiv;
+};
+
+// Export the createButtons function
+export { getAllProjects, addProject, deleteProject, updateProject, createButtons };

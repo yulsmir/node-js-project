@@ -5,6 +5,7 @@ import {
   deleteProject,
   updateProject,
   displayProjects,
+  createButtons,
 } from './projectController.js';
 
 // Call the displayProjects function to display projects on page load
