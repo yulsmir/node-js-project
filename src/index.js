@@ -10,8 +10,13 @@ import {
 // Call the displayProjects function to display projects on page load
 document.getElementById('adminBtn').addEventListener('click', showLoginPopup);
 
-getAllProjects();
-displayProjects();
+// Fetch and display projects when the page loads
+window.addEventListener('load', async () => {
+  await displayProjects();
+});
+
+// getAllProjects();
+// displayProjects();
 
 // document.getElementById('addProjectButton').addEventListener('click', () => {
 //   const projectName = document.getElementById('projectNameInput').value;

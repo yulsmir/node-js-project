@@ -1,4 +1,3 @@
-// testDb.js
 import { getData } from './db.js';
 
 async function testDatabaseConnection() {

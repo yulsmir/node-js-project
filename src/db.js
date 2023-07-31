@@ -38,9 +38,9 @@ function handleError(res, error) {
 async function getData(statement, params) {
   const connection = await prepareConnection();
   try {
-    const results = await executeStatement(connection, statement, params);
-
-    return results;
+    const [results] = await executeStatement(connection, statement, params);
+    console.log('Retrieved data:', [results]);
+    return [results];
   } catch (error) {
     // Instead of using res.send, throw the error
     throw new Error('Internal Server Error');
