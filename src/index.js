@@ -9,14 +9,14 @@ import {
 } from './projectController.js';
 
 document.getElementById('adminBtn').addEventListener('click', showLoginPopup);
-
+// document.getElementById('work').addEventListener('load', displayProjects);
 // Fetch and display projects when the page loads
-window.addEventListener('load', async () => {
-  await displayProjects();
-  await createButtons();
-});
+// window.addEventListener('load', async () => {
+//   await displayProjects();
+//   await createButtons();
+// });
 
-getAllProjects();
+// getAllProjects();
 displayProjects();
 
 // document.getElementById('addProjectButton').addEventListener('click', () => {
