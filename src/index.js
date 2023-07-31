@@ -8,16 +8,16 @@ import {
   createButtons,
 } from './projectController.js';
 
-// Call the displayProjects function to display projects on page load
 document.getElementById('adminBtn').addEventListener('click', showLoginPopup);
 
 // Fetch and display projects when the page loads
 window.addEventListener('load', async () => {
   await displayProjects();
+  await createButtons();
 });
 
-// getAllProjects();
-// displayProjects();
+getAllProjects();
+displayProjects();
 
 // document.getElementById('addProjectButton').addEventListener('click', () => {
 //   const projectName = document.getElementById('projectNameInput').value;

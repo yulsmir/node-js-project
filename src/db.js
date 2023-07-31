@@ -30,7 +30,7 @@ async function unprepareConnection(connection) {
 }
 
 // Handle errors
-function handleError(res, error) {
+async function handleError(res, error) {
   res.send({ error: 'Internal Server Error' });
 }
 

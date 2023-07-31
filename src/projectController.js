@@ -103,4 +103,4 @@ const createButtons = () => {
 };
 
 // Export the createButtons function
-export { getAllProjects, addProject, deleteProject, updateProject, createButtons };
+export { getAllProjects, displayProjects, addProject, deleteProject, updateProject, createButtons };
