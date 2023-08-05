@@ -22,7 +22,7 @@ Requirement:
 Deployment links:
 1. App https://node-portfolio.fly.dev/
 2. DB 
-  - https://portfolio-mysql-db.fly.dev/
+  - https://portfolio-mysql-db.fly.dev/ - availabe for admin only
   - https://github.com/yulsmir/portfolio-mysqldb-fly.io
 
 Setup for a local run:
